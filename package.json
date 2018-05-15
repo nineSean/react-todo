@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/webpack",
-    "build": "webpack"
+    "build": "webpack -p",
+    "watch": "webpack --progress --watch",
+    "start": "webpack-dev-server --open"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +17,7 @@
     "lodash": "^4.17.10"
   },
   "devDependencies": {
-    "webpack": "^4.8.3"
+    "webpack": "^4.8.3",
+    "webpack-dev-server": "^3.1.4"
   }
 }
