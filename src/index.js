@@ -14,4 +14,4 @@ function More(props){
   )
 }
 
-ReactDOM.render(<More name='apple'/>, document.querySelector('#root'))
+ReactDOM.render(<Welcome/>, document.querySelector('#root'))
