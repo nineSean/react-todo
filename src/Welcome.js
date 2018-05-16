@@ -8,20 +8,19 @@ class Welcome extends React.Component{
     setInterval(e => {
       this.setState({date: new Date()})
     }, 1000)
-    console.log('constructor')
   }
-  componentWillMount(){
-    console.log('componentWillMount')
-  }
+  /*
+    一般而言this.setState放在以下钩子里
+    componentWillMount
+    componentDidMount
+    shouldComponentReceivePros
+
+    而this.setState触发以下钩子
+  */
   render(){
-    console.log('render')
-    return <h1>{this.state.date.toLocaleTimeString()}</h1>
-  }
-  componentDidMount(){
-    console.log('componentDidMount')
-  }
-  componentWillReceiveProps(){
-    console.log('componentWillRecieveProps')
+    return (
+      <h1>It's time: {this.state.date.toLocaleTimeString()}</h1>
+    )
   }
   shouldComponentUpdate(){
     console.log('shouldComponentUpdate')
@@ -32,10 +31,7 @@ class Welcome extends React.Component{
   }
   componentDidUpdate(){
     console.log('componentDidUpdate')
-    console.log('------')
-  }
-  componentWillUnmount(){
-    console.log('componentWillUnmount')
+    console.log('-------------')
   }
 }
 export default Welcome
