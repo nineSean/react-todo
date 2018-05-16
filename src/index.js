@@ -1,46 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import Table from './filterableProductTable'
 
-class TodoList extends React.Component{
-  constructor(prop){
-    this.state = {
-      items: []
-    }
-  }
-  render(){
-    return (
-      <div>
-        <h1>我的代办事项</h1>
-        <InputBar/>
-        <ItemLIst/>
-      </div>
-    )
-  }
-}
+const PRODUCTS = [
+  {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
+  {category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
+  {category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball'},
+  {category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch'},
+  {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
+  {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
+];
 
-class InputBar extends React.Component{
-  constructor(props){
-
-  }
-  render(){
-    return (
-      <div>
-        <input type="text"/>
-        <button>添加代办事项</button>
-      </div>
-    )
-  }
-}
-class ItemList extends React.Component{
-  constructor(props){
-
-  }
-  render(){
-    return (
-
-    )
-  }
-}
-
-ReactDOM.render(<TodoList/>, document.querySelector('#root'))
+ReactDOM.render(<Table products = {PRODUCTS}/>, document.querySelector('#root'))
